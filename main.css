@@ -1,0 +1,160 @@
+:root{
+    
+    --White:hsl(0, 0%, 100%);
+    --Off-white: hsl(0, 0%, 94%);
+    --Light-grey: hsl(0, 0%, 86%);
+    --Smokey-grey: hsl(0, 1%, 44%);
+    --Off-black: hsl(0, 0%, 8%);
+    
+    --Purple:hsl(259, 100%, 65%);
+    --Light-red:hsl(0, 100%, 67%);
+    
+    }
+
+*{
+    font-family: sans-serif;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--Light-grey);
+}
+
+.card{
+    background-color: var(--White);
+    width: 60%;
+    border-radius: 1rem 1rem 10rem 1rem;
+}
+
+.container{
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+}
+
+.form-container{
+    display: flex;
+    gap: 2rem;
+}
+
+.block{
+    display: flex;
+    flex-direction: column;
+}
+
+.block label{
+    text-transform: capitalize;
+    font-weight: 800;
+}
+
+input{
+    width: 100px;
+    padding: .5rem;
+    border-radius: .5rem;
+    border: 2px solid var(--Light-grey);
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+}
+
+input::placeholder{
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.submit-block{
+    display: flex;
+    align-items: center;
+}
+
+.submit-block hr{
+    width: 100%;
+
+}
+
+.submit-block .submit-btn{
+    border-radius: 50%;
+    padding: 1rem;
+    background-color: var(--Purple);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.output h1{
+    font-size: 5rem;
+    font-weight: 800;
+    font-style: italic;
+    height: fit-content;
+
+}
+.output span{
+    color: var(--Purple);
+
+}
+
+small{
+    color: red;
+}
+
+
+
+
+
+
+@media  screen and (max-width:600px) {
+
+    .card{
+        width: 360px;
+    }
+
+    .container{
+        padding: 1rem;
+    }
+
+    .form-container{
+        display: flex;
+        gap: .5rem;
+        margin-bottom: 3rem;
+        justify-content: space-between;
+    }
+
+    .submit-block{
+        position: relative;
+    }
+    
+    .submit-block .submit-btn{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+
+    .output{
+        margin-top: 4rem;
+
+    }
+
+    .output h1{
+        font-size: 3.5rem;
+    
+    }
+
+}
+
+
+
