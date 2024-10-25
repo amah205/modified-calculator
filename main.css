@@ -109,6 +109,8 @@ input::placeholder{
 
 small{
     color: red;
+    font-size: .8rem;
+    padding:2px 0px 2px 0px ;
 }
 
 

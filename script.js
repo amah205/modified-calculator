@@ -1,5 +1,4 @@
 'use strict'
-
 // INPUT ELEMENT
 const dayInp =document.getElementById('day');
 const  monthInp =document.getElementById('month');
@@ -21,18 +20,65 @@ const date =new Date();
 let day =date.getDate();
 let month =1 + date.getMonth();
 let year =date.getFullYear();
+console.log(year)
 
 const months =[31,28,31,30,31,30,31,31,30,31,30,31];
 
+
+
+
+/*const inputs =document.querySelectorAll('input');
+inputs.forEach(input =>{
+    //   console.log(input)
+
+
+    const parent =input.parentElement;
+
+    input.addEventListener('click', (mov) =>{
+
+        const call=mov.target;
+        call.style.borderColor='red';
+
+        const msg=document.querySelector('small');
+        msg.classList.add('small');
+        msg.innerHTML='Required';
+        parent.append(msg)
+        // console.log(msg);
+    })
+})*/
+
+
 function validate(){
     const inputs =document.querySelectorAll('input');
+  
+    
     let validator = true;
 
     inputs.forEach((i )=> {
+
         const parent =i.parentElement;
+    
         if(!i.value){
-            i.style.borderColor='red';
-            parent.querySelector('small').innerText='this field is required'
+            // i.style.borderColor='red';
+            // parent.querySelector('small').innerText='this field is required'
+            inputs.forEach(input =>{
+                //   console.log(input)
+            
+            
+                const parent =input.parentElement;
+            
+                input.addEventListener('click', (mov) =>{
+            
+                    const call=mov.target;
+                    call.style.borderColor='red';
+            
+                   /* const msg=document.querySelector('small');
+                    msg.classList.add('small');
+                    msg.innerHTML='Required';
+                    parent.append(msg)
+                    // console.log(msg);*/
+                })
+            })
             validator=false;
 
         }else if(monthInp.value >12){
@@ -49,12 +95,13 @@ function validate(){
             validator=true;
 
         }
+
+
     })
     return validator;
-    
 };
 
- function handleSubmit(e){
+function handleSubmit(e){
     e.preventDefault();
     if(validate()){
         if(dayInp.value > day){
@@ -77,3 +124,6 @@ function validate(){
 }
 
 validate()
+
+
+
